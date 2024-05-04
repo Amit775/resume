@@ -1,0 +1,57 @@
+{
+  "name": "resume",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@analogjs/platform:vite",
+      "defaultConfiguration": "production",
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "sourcemap": false,
+          "mode": "production"
+        }
+      },
+      "outputs": [
+        "{options.outputPath}",
+        "{workspaceRoot}/dist/resume/.nitro",
+        "{workspaceRoot}/dist/resume/ssr",
+        "{workspaceRoot}/dist/resume/analog"
+      ],
+      "options": {
+        "main": "resume/src/main.ts",
+        "configFile": "resume/vite.config.ts",
+        "outputPath": "dist/resume/client",
+        "tsConfig": "resume/tsconfig.app.json"
+      }
+    },
+    "serve": {
+      "executor": "@analogjs/platform:vite-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "resume:build",
+        "port": 4200
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "resume:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "resume:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@analogjs/platform:vitest",
+      "outputs": [
+        "{projectRoot}/coverage"
+      ]
+    }
+  },
+  "tags": [],
+  "sourceRoot": "./resume/src"
+}

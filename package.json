@@ -2,7 +2,9 @@
   "name": "@resume/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+	"start": "nx run resume:serve --open"
+  },
   "private": true,
   "dependencies": {
     "@analogjs/content": "^1.2.0",

@@ -1,0 +1,25 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$resume-primary: mat.define-palette(mat.$indigo-palette, 500);
+$resume-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$resume-warn: mat.define-palette(mat.$red-palette);
+$resume-theme: mat.define-light-theme((color: (primary: $resume-primary,
+				accent: $resume-accent,
+				warn: $resume-warn,
+			),
+			typography: mat.define-typography-config($font-family: 'Calibri'
+			),
+			density: 0,
+		));
+
+@include mat.all-component-themes($resume-theme);
+
+html,
+body {
+	display: block;
+	height: 100%;
+	overflow-x: hidden;
+	margin: 0;
+	font-family: 'calibri', sans-serif;
+}

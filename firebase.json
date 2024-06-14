@@ -8,9 +8,6 @@
     "public": "dist/resume/analog/public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "cleanUrls": true,
-    "rewrites": [{ "source": "**", "function": "server" }],
-    "frameworksBackend": {
-      "region": "europe-west1"
-    }
+    "rewrites": [{ "source": "**", "function": "server" }]
   }
 }

@@ -1,0 +1,16 @@
+{
+  "functions": {
+    "source": "dist/resume/analog/server",
+	"runtime": "nodejs18"
+  },
+  "hosting": {
+	"site": "bublil",
+    "public": "dist/resume/analog/public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "cleanUrls": true,
+    "rewrites": [{ "source": "**", "function": "server" }],
+    "frameworksBackend": {
+      "region": "europe-west1"
+    }
+  }
+}

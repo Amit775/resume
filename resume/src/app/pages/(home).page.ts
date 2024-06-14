@@ -71,16 +71,15 @@ export default class HomeComponent {
     routine: ["Full Stack Developer", "Team Leader", "Tech Lead"],
     contact: {
       location: "Ramat Gan, Israel",
-      phone: "052-7528885",
-      email: "ambuex@gmail.com",
+      email: "bublilamit@gmail.com",
       github: "github.com/Amit775",
       linkedin: "linkedin.com/in/amit-bublil",
     },
     profile: `
-		I have 6 years of experience, with 2 years as a team-leader.
-		I am Full-Stack developer with 'can-do' attitude and passionate about code.
-		I am continually learning to stay up-to-date with Angular and other frameworks.
-		As a team member, I always eager to share knowledge and learn from others.
+	I am a Full-Stack Developer with passion for coding.
+	I have 6 years of experience, including 2 years as a team leader in 8200 unit. 
+	I continually learn to stay up-to-date with Angular and other frameworks.
+	As a team member, I am always eager to share knowledge and learn from others.
 	`,
     skills: {
       title: "Skills",
@@ -91,11 +90,11 @@ export default class HomeComponent {
         },
         {
           title: "Frameworks",
-          elements: ["Angular", "Nest.js", "Node.js", ".NetCore", ".Net"],
+          elements: ["Angular", "Nest", "NodeJs", ".NetCore"],
         },
         {
-          title: "Libraries",
-          elements: ["Akita", "NGRX"],
+          title: "State Management",
+          elements: ["Akita", "NgRx"],
         },
         {
           title: "Databases",
@@ -106,12 +105,11 @@ export default class HomeComponent {
           elements: [
             "Nx",
             "Git",
-            "Gitlab-CI",
             "Openshift",
+            "Gitlab-CI",
             "Jenkins",
-            "Jira",
             "Grafana",
-            "Kiabana",
+            "Kibana",
           ],
         },
       ],
@@ -122,31 +120,31 @@ export default class HomeComponent {
         milestones: [
           {
             title: "Full-Stack Developer & Tech Lead",
-            subtitle: "Intelligence Unit, IDF",
+            subtitle: "8200 - Intelligence Unit, IDF",
             elements: [
-              "consult and mentor developers and team leaders",
-              "help design and implement cross-teams solutions and optimizations",
-              "research and establish modern microfrontends architecture using Angular, Nx and Module Federation",
+              "Consulted and mentored developers and team leaders.",
+              "Helped design and implement cross-team solutions and optimizations.",
+              "Researched and established a modern microfrontend architecture using Angular, Nx, and Module Federation.",
             ],
             timeline: "Mar 2024 - Present",
           },
           {
             title: "Team Leader",
-            subtitle: "Intelligence Unit, IDF",
+            subtitle: "8200 - Intelligence Unit, IDF",
             elements: [
-              "manage a team with 7 developers and QA, work closely with PM using Agile methodology",
-              "modernize our projects to use Angular 16, nestjs and Nx",
-              "led the merging of our project with two additional projects to create a unified platform with emphasis on performance and unified UI/UX",
+              "Managed a team of 7 developers and QA, working closely with the PM using Agile methodology.",
+              "Modernized projects to use Angular 16, Nest.js, and Nx.",
+              "Led the merging of three projects into a unified platform with a focus on performance and a unified UI/UX.",
             ],
             timeline: "Nov 2021 - Mar 2024",
           },
           {
             title: "Full-Stack Developer",
-            subtitle: "Intelligence Unit, IDF",
+            subtitle: "8200 - Intelligence Unit, IDF",
             elements: [
-              "develop and maintain features in large-scale realtime (SignalR) geographic applications using Angular 5-8, with microservices in .NetCore and a legacy monolith in .Net",
-              "improve our CI/CD pipelines, monitoring and logging tools using Jenkins, Grafana and Kiabana",
-              "feature example: create geographic layers from excel or shape files.",
+              "Developed and maintained features in large-scale real-time (SignalR) geographic applications using Angular 5-8, with microservices in .NetCore and a legacy monolith in .Net.",
+              "Improved CI/CD pipelines, monitoring, and logging tools using Jenkins, Grafana, and Kibana.",
+              "Example project: Created geographic layers from Excel or shape files.",
             ],
             timeline: "Nov 2018 - Nov 2021",
           },
@@ -160,7 +158,7 @@ export default class HomeComponent {
             subtitle: "Tel Aviv University",
             elements: [
               "Psagot - Excellence Program",
-              "focus on computer structure and electronic devices",
+              "Focus on computer structure and electronic devices",
             ],
             timeline: "2014 - 2018",
           },

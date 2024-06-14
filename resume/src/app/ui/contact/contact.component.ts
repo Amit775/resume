@@ -3,7 +3,6 @@ import { MatIconModule } from "@angular/material/icon";
 
 export type Contact = {
   email: string;
-  phone: string;
   location: string;
   github: string;
   linkedin: string;
@@ -43,7 +42,6 @@ export default class ContactComponent {
 
   icons: Record<keyof Contact, string | { external: string }> = {
     email: "email",
-    phone: "phone",
     location: "location_on",
     github: { external: "github" },
 	linkedin: { external: "linkedin" }

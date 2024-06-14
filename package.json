@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx run resume:serve --open"
+    "start": "nx run resume:serve --open",
+	"build": "nx run resume:build"
   },
   "private": true,
   "dependencies": {

@@ -26,19 +26,7 @@ export default defineConfig(({ mode }) => {
         vite: {
           inlineStylesExtension: "scss",
         },
-        nitro: {
-          preset: "firebase",
-          firebase: {
-            nodeVersion: "20",
-            gen: 2,
-            httpsOptions: {
-              region: "europe-west1",
-              maxInstances: 100,
-            },
-          },
-        },
       }),
-
       nxViteTsPaths(),
       splitVendorChunkPlugin(),
     ],

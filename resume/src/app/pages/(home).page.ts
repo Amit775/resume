@@ -133,7 +133,7 @@ export default class HomeComponent {
             subtitle: "8200 - Intelligence Unit, IDF",
             elements: [
               "Managed a team of 7 developers and a QA, working closely with the Product using Agile methodology.",
-              "Modernized projects to use Angular 16, Nest.js, and Nx.",
+              "Modernized projects to use Angular 16, NestJs, and Nx.",
               "Led the integration of three projects into a unified platform with a focus on performance and a unified UI/UX.",
             ],
             timeline: "Nov 2021 - Mar 2024",

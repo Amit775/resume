@@ -11,11 +11,13 @@ import { RouterOutlet } from "@angular/router";
 })
 export class AppComponent {
   #sanitizer = inject(DomSanitizer);
-  #icon = inject(MatIconRegistry).addSvgIcon(
-    "github",
-    this.#sanitizer.bypassSecurityTrustResourceUrl("http://localhost:4200/assets/github-mark.svg")
-  ).addSvgIcon(
-	"linkedin",
-	this.#sanitizer.bypassSecurityTrustResourceUrl("http://localhost:4200/assets/linkedin.svg")
-  );
+  #registry = inject(MatIconRegistry)
+    .addSvgIcon(
+      "github",
+      this.#sanitizer.bypassSecurityTrustResourceUrl("assets/github.svg")
+    )
+    .addSvgIcon(
+      "linkedin",
+      this.#sanitizer.bypassSecurityTrustResourceUrl("assets/linkedin.svg")
+    );
 }

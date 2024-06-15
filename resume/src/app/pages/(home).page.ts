@@ -68,7 +68,7 @@ import SectionComponent from "../ui/section/section.component";
 export default class HomeComponent {
   data = {
     name: "Amit Bublil",
-    routine: ["Full Stack Developer", "Team Leader", "Tech Lead"],
+    routine: ["Full Stack Developer", "Team Leader", "Tech Leader"],
     contact: {
       location: "Ramat Gan, Israel",
       email: "bublilamit@gmail.com",
@@ -78,7 +78,7 @@ export default class HomeComponent {
     profile: `
 	I am a Full-Stack Developer with passion for coding.
 	I have 6 years of experience, including 2 years as a team leader in 8200 unit. 
-	I continually learn to stay up-to-date with Angular and other frameworks.
+	I constantly learn to stay up-to-date with Angular and other frameworks.
 	As a team member, I am always eager to share knowledge and learn from others.
 	`,
     skills: {
@@ -86,11 +86,11 @@ export default class HomeComponent {
       milestones: [
         {
           title: "Languages",
-          elements: ["TypeScript", "C#"],
+          elements: ["TypeScript", "C#", "Python"],
         },
         {
           title: "Frameworks",
-          elements: ["Angular", "Nest", "NodeJs", ".NetCore"],
+          elements: ["Angular", "NestJS", "Node.js", ".NetCore"],
         },
         {
           title: "State Management",
@@ -106,10 +106,10 @@ export default class HomeComponent {
             "Nx",
             "Git",
             "Openshift",
-            "Gitlab-CI",
-            "Jenkins",
             "Grafana",
             "Kibana",
+            "Gitlab-CI",
+            "Jenkins",
           ],
         },
       ],
@@ -119,7 +119,7 @@ export default class HomeComponent {
         title: "Experience",
         milestones: [
           {
-            title: "Full-Stack Developer & Tech Lead",
+            title: "Full-Stack Developer & Tech Leader",
             subtitle: "8200 - Intelligence Unit, IDF",
             elements: [
               "Consulted and mentored developers and team leaders.",
@@ -132,9 +132,9 @@ export default class HomeComponent {
             title: "Team Leader",
             subtitle: "8200 - Intelligence Unit, IDF",
             elements: [
-              "Managed a team of 7 developers and QA, working closely with the PM using Agile methodology.",
+              "Managed a team of 7 developers and a QA, working closely with the Product using Agile methodology.",
               "Modernized projects to use Angular 16, Nest.js, and Nx.",
-              "Led the merging of three projects into a unified platform with a focus on performance and a unified UI/UX.",
+              "Led the integration of three projects into a unified platform with a focus on performance and a unified UI/UX.",
             ],
             timeline: "Nov 2021 - Mar 2024",
           },
@@ -142,9 +142,8 @@ export default class HomeComponent {
             title: "Full-Stack Developer",
             subtitle: "8200 - Intelligence Unit, IDF",
             elements: [
-              "Developed and maintained features in large-scale real-time (SignalR) geographic applications using Angular 5-8, with microservices in .NetCore and a legacy monolith in .Net.",
-              "Improved CI/CD pipelines, monitoring, and logging tools using Jenkins, Grafana, and Kibana.",
-              "Example project: Created geographic layers from Excel or shape files.",
+              "Developed and maintained features in large-scale, real-time (SignalR) geographic applications using Angular 5-8, with microservices in .NetCore and a legacy monolith in .Net.",
+              "Improved CI/CD pipelines, monitoring, and logging tools using Jenkins, Grafana and Kibana.",
             ],
             timeline: "Nov 2018 - Nov 2021",
           },

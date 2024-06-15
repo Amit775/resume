@@ -68,7 +68,7 @@ import SectionComponent from "../ui/section/section.component";
 export default class HomeComponent {
   data = {
     name: "Amit Bublil",
-    routine: ["Full Stack Developer", "Team Leader", "Tech Leader"],
+    routine: ["Full Stack Developer", "Team Leader", "Tech Lead"],
     contact: {
       location: "Ramat Gan, Israel",
       email: "bublilamit@gmail.com",
@@ -119,7 +119,7 @@ export default class HomeComponent {
         title: "Experience",
         milestones: [
           {
-            title: "Full-Stack Developer & Tech Leader",
+            title: "Full-Stack Developer & Tech Lead",
             subtitle: "8200 - Intelligence Unit, IDF",
             elements: [
               "Consulted and mentored developers and team leaders.",

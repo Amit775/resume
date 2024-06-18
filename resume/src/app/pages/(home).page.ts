@@ -128,7 +128,7 @@ export default class HomeComponent {
       workplaces: [
         {
           title: "8200 - Intelligence Unit, IDF",
-          description: `A geographic-oriented web application enabling data management and real-time collaboration.`,
+          description: `geographic web application enabling data management and real-time collaboration.`,
           milestones: [
             {
               title: "Full-Stack Developer & Tech Lead",

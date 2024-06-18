@@ -7,7 +7,7 @@ import { Component, input } from "@angular/core";
     <div class="milestone">
       <div class="header">
         <span class="column">
-          <span>{{ title() }}</span>
+          <span style="font-weight:bold">{{ title() }}</span>
           @if (subtitle()) {
           <span class="subtitle"> {{ subtitle() }} </span>
           }

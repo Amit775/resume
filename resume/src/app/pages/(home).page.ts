@@ -9,12 +9,7 @@ import SectionComponent from "../ui/section/section.component";
   standalone: true,
   selector: "resume-home",
   host: { class: "page" },
-  imports: [
-    SectionComponent,
-    MilestoneComponent,
-    RoutineComponent,
-    ContactComponent,
-  ],
+  imports: [SectionComponent, MilestoneComponent, RoutineComponent, ContactComponent],
   template: `
     <div class="home">
       <resume-section [title]="data.name" id="title">
@@ -37,11 +32,30 @@ import SectionComponent from "../ui/section/section.component";
         </div>
         <div class="content">
           <resume-section title="Profile">
-            <div class="profile-content">{{ data.profile }}</div>
+            <div class="profile-content" [innerHTML]="data.profile"></div>
           </resume-section>
-          @for (section of data.sections; track section.title) {
-          <resume-section [title]="section.title" [class.last-section]="$last">
-            @for (milestone of section.milestones; track milestone.title) {
+          <resume-section [title]="data.experience.title">
+            @for (workplace of data.experience.workplaces; track workplace.title) {
+            <div class="workplace">
+              <div class="workplace-header">
+                <span class="workplace-title">{{ workplace.title }}</span>
+                <span class="workplace-description">{{ workplace.description }}</span>
+              </div>
+              <div class="workplace-roles">
+                @for (milestone of workplace.milestones; track milestone.title) {
+                <resume-milestone
+                  [class.last-milestone]="$last"
+                  [title]="milestone.title"
+                  [elements]="milestone.elements"
+                  [timeline]="milestone.timeline"
+                />
+                }
+              </div>
+            </div>
+            }
+          </resume-section>
+          <resume-section [title]="data.education.title" class="last-section">
+            @for (milestone of data.education.milestones; track milestone.title) {
             <resume-milestone
               [class.last-milestone]="$last"
               [title]="milestone.title"
@@ -51,7 +65,6 @@ import SectionComponent from "../ui/section/section.component";
             />
             }
           </resume-section>
-          }
         </div>
       </div>
     </div>
@@ -63,12 +76,16 @@ import SectionComponent from "../ui/section/section.component";
 	.main { display: flex; flex-direction: row; }
 	.info { display: flex; flex-direction: column; flex: 1; }
 	.content { display: flex; flex-direction: column; flex: 3; }
+	.workplace-header { display: flex; flex-direction: column; }
+	.workplace-title { font-weight: bold; }
+	.workplace-description { font-size: 1em; }
+	.workplace-roles { padding-left: 16px; }
   `,
 })
 export default class HomeComponent {
   data = {
     name: "Amit Bublil",
-    routine: ["Full Stack Developer", "Team Leader", "Tech Lead"],
+    routine: ["Full Stack Developer"],
     contact: {
       location: "Ramat Gan, Israel",
       email: "bublilamit@gmail.com",
@@ -78,7 +95,7 @@ export default class HomeComponent {
     profile: `
 	I am a Full-Stack Developer with passion for coding.
 	I have 6 years of experience, including 2 years as a team leader in 8200 unit. 
-	I constantly learn to stay up-to-date with Angular and other frameworks.
+	<b>I constantly learn to stay up-to-date with Angular</b> and other frameworks.
 	As a team member, I am always eager to share knowledge and learn from others.
 	`,
     skills: {
@@ -102,67 +119,60 @@ export default class HomeComponent {
         },
         {
           title: "Development Tools",
-          elements: [
-            "Nx",
-            "Git",
-            "Openshift",
-            "Grafana",
-            "Kibana",
-            "Gitlab-CI",
-            "Jenkins",
+          elements: ["Nx", "Git", "Openshift", "Grafana", "Kibana", "Gitlab-CI", "Jenkins"],
+        },
+      ],
+    },
+    experience: {
+      title: "Experience",
+      workplaces: [
+        {
+          title: "8200 - Intelligence Unit, IDF",
+          description: `A geographic-oriented web application enabling data management and real-time collaboration.`,
+          milestones: [
+            {
+              title: "Full-Stack Developer & Tech Lead",
+              elements: [
+                "Consulted and mentored developers and team leaders.",
+                "Helped design and implement cross-team solutions and optimizations.",
+                "Researched and established a modern microfrontend architecture using Angular, Nx and Module Federation.",
+              ],
+              timeline: "Mar 2024 - Present",
+            },
+            {
+              title: "Team Leader",
+              elements: [
+                "Managed a team of 7 developers and a QA, working closely with the Product using Agile methodology.",
+                "Modernized projects to use Angular 16, NestJs and Nx.",
+                "Led the integration of three projects into a unified platform with a focus on performance and a unified UI/UX.",
+              ],
+              timeline: "Nov 2021 - Mar 2024",
+            },
+            {
+              title: "Full-Stack Developer",
+              elements: [
+                "Developed and maintained features in large-scale, real-time (SignalR) geographic applications using Angular 5-8, with microservices in .NetCore and a legacy monolith in .Net.",
+                "Improved CI/CD pipelines, monitoring, and logging tools using Jenkins, Grafana and Kibana.",
+              ],
+              timeline: "Nov 2018 - Nov 2021",
+            },
           ],
         },
       ],
     },
-    sections: [
-      {
-        title: "Experience",
-        milestones: [
-          {
-            title: "Full-Stack Developer & Tech Lead",
-            subtitle: "8200 - Intelligence Unit, IDF",
-            elements: [
-              "Consulted and mentored developers and team leaders.",
-              "Helped design and implement cross-team solutions and optimizations.",
-              "Researched and established a modern microfrontend architecture using Angular, Nx, and Module Federation.",
-            ],
-            timeline: "Mar 2024 - Present",
-          },
-          {
-            title: "Team Leader",
-            subtitle: "8200 - Intelligence Unit, IDF",
-            elements: [
-              "Managed a team of 7 developers and a QA, working closely with the Product using Agile methodology.",
-              "Modernized projects to use Angular 16, NestJs, and Nx.",
-              "Led the integration of three projects into a unified platform with a focus on performance and a unified UI/UX.",
-            ],
-            timeline: "Nov 2021 - Mar 2024",
-          },
-          {
-            title: "Full-Stack Developer",
-            subtitle: "8200 - Intelligence Unit, IDF",
-            elements: [
-              "Developed and maintained features in large-scale, real-time (SignalR) geographic applications using Angular 5-8, with microservices in .NetCore and a legacy monolith in .Net.",
-              "Improved CI/CD pipelines, monitoring, and logging tools using Jenkins, Grafana and Kibana.",
-            ],
-            timeline: "Nov 2018 - Nov 2021",
-          },
-        ],
-      },
-      {
-        title: "Education",
-        milestones: [
-          {
-            title: "B.Sc. in Physics and Electrical Engineering",
-            subtitle: "Tel Aviv University",
-            elements: [
-              "Psagot - Excellence Program",
-              "Focus on computer structure and electronic devices",
-            ],
-            timeline: "2014 - 2018",
-          },
-        ],
-      },
-    ],
+    education: {
+      title: "Education",
+      milestones: [
+        {
+          title: "B.Sc. in Physics and Electrical Engineering",
+          subtitle: "Tel Aviv University",
+          elements: [
+            "Psagot - Excellence Program",
+            "Focus on computer structure and electronic devices",
+          ],
+          timeline: "2014 - 2018",
+        },
+      ],
+    },
   };
 }

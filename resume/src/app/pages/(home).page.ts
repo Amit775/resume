@@ -78,7 +78,7 @@ import SectionComponent from "../ui/section/section.component";
 	.content { display: flex; flex-direction: column; flex: 3; }
 	.workplace-header { display: flex; flex-direction: column; }
 	.workplace-title { font-weight: bold; }
-	.workplace-description { font-size: 1em; }
+	.workplace-description { font-size: 15px; }
 	.workplace-roles { padding-left: 16px; }
   `,
 })
@@ -128,7 +128,7 @@ export default class HomeComponent {
       workplaces: [
         {
           title: "8200 - Intelligence Unit, IDF",
-          description: `geographic web application enabling data management and real-time collaboration.`,
+          description: `geographic web application for data management and real-time collaboration.`,
           milestones: [
             {
               title: "Full-Stack Developer & Tech Lead",

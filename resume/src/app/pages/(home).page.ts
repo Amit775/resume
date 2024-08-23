@@ -1,9 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, ElementRef, inject } from "@angular/core";
 
 import ContactComponent from "../ui/contact/contact.component";
 import MilestoneComponent from "../ui/milestone/milestone.component";
 import RoutineComponent from "../ui/routine/routine.component";
 import SectionComponent from "../ui/section/section.component";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 @Component({
   standalone: true,
@@ -12,7 +14,7 @@ import SectionComponent from "../ui/section/section.component";
   imports: [SectionComponent, MilestoneComponent, RoutineComponent, ContactComponent],
   template: `
     <div class="home">
-      <resume-section [title]="data.name" id="title">
+      <resume-section [title]="data.name" id="title" (dblclick)="download()">
         <resume-routine [stages]="data.routine" />
       </resume-section>
       <div class="main">
@@ -83,6 +85,7 @@ import SectionComponent from "../ui/section/section.component";
   `,
 })
 export default class HomeComponent {
+  private host: HTMLElement = inject(ElementRef).nativeElement;
   data = {
     name: "Amit Bublil",
     routine: ["Full Stack Developer"],
@@ -175,4 +178,21 @@ export default class HomeComponent {
       ],
     },
   };
+
+  public download(): void {
+    console.log("download");
+    const element = this.host.querySelector<HTMLElement>(".home");
+    if (element == null) return;
+
+    html2canvas(element).then((canvas) => {
+      const imgData = canvas.toDataURL("image/jpeg");
+      const pdf = new jsPDF("p", "mm", "a4");
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+      pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight);
+      pdf.save(`${this.data.name} - Resume.pdf`);
+    });
+  }
 }

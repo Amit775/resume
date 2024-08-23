@@ -181,18 +181,6 @@ export default class HomeComponent {
 
   public download(): void {
     console.log("download");
-    const element = this.host.querySelector<HTMLElement>(".home");
-    if (element == null) return;
-
-    html2canvas(element).then((canvas) => {
-      const imgData = canvas.toDataURL("image/jpeg");
-      const pdf = new jsPDF("p", "mm", "a4");
-      const imgProps = pdf.getImageProperties(imgData);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-      pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight);
-      pdf.save(`${this.data.name} - Resume.pdf`);
-    });
+    window.print();
   }
 }

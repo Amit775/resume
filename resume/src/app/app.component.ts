@@ -14,10 +14,10 @@ export class AppComponent {
   #registry = inject(MatIconRegistry)
     .addSvgIcon(
       "github",
-      this.#sanitizer.bypassSecurityTrustResourceUrl("assets/github.svg")
+      this.#sanitizer.bypassSecurityTrustResourceUrl("https://bublil.dev/assets/github.svg")
     )
     .addSvgIcon(
       "linkedin",
-      this.#sanitizer.bypassSecurityTrustResourceUrl("assets/linkedin.svg")
+      this.#sanitizer.bypassSecurityTrustResourceUrl("https://bublil.dev/assets/linkedin.svg")
     );
 }

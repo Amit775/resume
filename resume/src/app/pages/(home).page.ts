@@ -4,8 +4,6 @@ import ContactComponent from "../ui/contact/contact.component";
 import MilestoneComponent from "../ui/milestone/milestone.component";
 import RoutineComponent from "../ui/routine/routine.component";
 import SectionComponent from "../ui/section/section.component";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
 
 @Component({
   standalone: true,

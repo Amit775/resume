@@ -1,4 +1,3 @@
-# replace "my-analog-app" with the name of the app you want to deploy
 [build]
   command = "nx build resume"
   publish = "dist/resume/analog/public"

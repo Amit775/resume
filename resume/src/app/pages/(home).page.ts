@@ -12,7 +12,7 @@ import SectionComponent from "../ui/section/section.component";
   imports: [SectionComponent, MilestoneComponent, RoutineComponent, ContactComponent],
   template: `
     <div class="home" (contextmenu)="download()">
-      <resume-section [title]="data.name" id="title">
+      <resume-section [title]="data.name" id="title" (dblclick)="download()">
         <resume-routine [stages]="data.routine" />
       </resume-section>
       <div class="main">

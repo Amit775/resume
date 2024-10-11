@@ -11,8 +11,8 @@ import SectionComponent from "../ui/section/section.component";
   host: { class: "page" },
   imports: [SectionComponent, MilestoneComponent, RoutineComponent, ContactComponent],
   template: `
-    <div class="home">
-      <resume-section [title]="data.name" id="title" (dblclick)="download()">
+    <div class="home" (contextmenu)="download()">
+      <resume-section [title]="data.name" id="title">
         <resume-routine [stages]="data.routine" />
       </resume-section>
       <div class="main">
@@ -72,7 +72,7 @@ import SectionComponent from "../ui/section/section.component";
   styles: `
 	::ng-deep #title * { border: none; }
 	::ng-deep #title .title { font-size: 3em; }
-  	.home { padding: 16px; padding-bottom: 0; margin-bottom: 16px; box-sizing: border-box; display: flex; flex-direction: column; width: 810px; }
+  .home { padding: 16px; padding-bottom: 0; margin-bottom: 16px; box-sizing: border-box; display: flex; flex-direction: column; width: 810px; }
 	.main { display: flex; flex-direction: row; }
 	.info { display: flex; flex-direction: column; flex: 1; }
 	.content { display: flex; flex-direction: column; flex: 3; }
@@ -83,7 +83,6 @@ import SectionComponent from "../ui/section/section.component";
   `,
 })
 export default class HomeComponent {
-  private host: HTMLElement = inject(ElementRef).nativeElement;
   data = {
     name: "Amit Bublil",
     routine: ["Full Stack Developer"],
@@ -178,7 +177,6 @@ export default class HomeComponent {
   };
 
   public download(): void {
-    console.log("download");
     window.print();
   }
 }
